@@ -1,0 +1,40 @@
+{
+  "name": "react-native-keyboard-accessory",
+  "version": "0.0.1",
+  "description": "A React Native Keyboard Accessory (View, Navigation) Component. Sticky views on keyboard.",
+  "author": {
+    "name": "Arda Oğulcan Pektaş",
+    "email": "ardaogulcan@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ardaogulcan/react-native-keyboard-accessory.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ardaogulcan/react-native-keyboard-accessory/issues"
+  },
+  "homepage": "https://github.com/ardaogulcan/react-native-keyboard-accessory",
+  "keywords": [
+    "react",
+    "react-native",
+    "keyboard-accessory",
+    "keyboard",
+    "ios",
+    "android",
+    "react-component"
+  ],
+  "tags": [
+    "react",
+    "react-native",
+    "react-component",
+    "ios",
+    "android"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "dependencies": {
+    "prop-types": "^15.5.10",
+    "react": "16.0.0-alpha.12",
+    "react-native": "^0.46.1"
+  }
+}
