@@ -3,3 +3,4 @@
 node_modules/
 .expo/
 npm-debug.*
+example/react-native-keyboard-accessory

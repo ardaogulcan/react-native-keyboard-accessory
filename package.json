@@ -6,6 +6,9 @@
     "name": "Arda Oğulcan Pektaş",
     "email": "ardaogulcan@gmail.com"
   },
+  "scripts": {
+    "start": "./scripts/start-example.sh"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ardaogulcan/react-native-keyboard-accessory.git"
