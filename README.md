@@ -3,7 +3,7 @@
 
 A React Native Keyboard Accessory (View, Navigation) Component. Sticky views on keyboard.
 
-<iframe src='https://gfycat.com/ifr/SafeRigidJunebug' frameborder='0' scrolling='no' width='748' height='1372' allowfullscreen></iframe>
+![IOS View Example](https://thumbs.gfycat.com/SafeRigidJunebug-small.gif)
 
 ## Installation
 Installation can be done through ``npm``:
