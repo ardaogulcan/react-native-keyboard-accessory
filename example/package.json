@@ -1,11 +1,11 @@
 {
-  "name": "example",
+  "name": "test",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-native-scripts": "1.2.1",
-    "jest-expo": "~20.0.0",
-    "react-test-renderer": "16.0.0-alpha.12"
+    "react-native-scripts": "1.11.1",
+    "jest-expo": "25.0.0",
+    "react-test-renderer": "16.2.0"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
@@ -13,16 +13,16 @@
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "node node_modules/jest/bin/jest.js --watch"
+    "test": "node node_modules/jest/bin/jest.js"
   },
   "jest": {
     "preset": "jest-expo"
   },
   "dependencies": {
-    "expo": "^20.0.0",
-    "react": "16.0.0-alpha.12",
-    "react-native": "^0.47.0",
-    "react-native-keyboard-aware-scroll-view": "^0.3.0",
-    "react-navigation": "^1.0.0-beta.11"
+    "expo": "^25.0.0",
+    "react": "16.2.0",
+    "react-native": "0.52.0",
+    "react-native-keyboard-aware-scroll-view": "^0.4.4",
+    "react-navigation": "^1.5.0"
   }
 }
