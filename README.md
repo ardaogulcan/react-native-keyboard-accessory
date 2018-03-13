@@ -6,10 +6,17 @@ A React Native Keyboard Accessory (View, Navigation) Component. Sticky views on 
 ![IOS View Example](https://media.giphy.com/media/ZFh86727hAbAc/giphy.gif)  ![IOS Navigation Example](https://media.giphy.com/media/NYsR2BtQaUaQw/giphy.gif)
 
 ## Installation
-Installation can be done through ``npm``:
+
+Via npm:
 
 ```shell
 npm install react-native-keyboard-accessory --save
+```
+
+Via Yarn:
+
+```shell
+yarn add react-native-keyboard-accessory
 ```
 
 ## Usage
@@ -18,13 +25,15 @@ You can use the ``KeyboardAccessoryView`` or the ``KeyboardAccessoryNavigation``
 components.
 
 ### Keyboard Accessory View
-Import ``react-native-keyboard-accessory``
+
+Import `react-native-keyboard-accessory`
 
 ```js
 import { KeyboardAccessoryView } from 'react-native-keyboard-accessory'
 
 ```
-And use it inside your ``render()`` function:
+
+Use it inside your `render()` function:
 
 ```jsx
 <KeyboardAccessoryView>
@@ -54,28 +63,32 @@ And use it inside your ``render()`` function:
 ## API
 
 ### *KeyboardAccessoryView*
+
 | **Prop** | **Type** | **Default** | **Description** |
 |----------|----------|-------------|-----------------|
 | `style` | `object` | `null` | Style `object` or `StyleSheet` reference which will be applied to Accessory `View` |
-| `animateOn` | `enum:string` | `'ios'` | Enables show/hide animation on given platorm. Values: `['ios', 'android', 'all', 'none']`. | 
-| `animationConfig` | `function` or `object` | `null` | For passing custom animations to show/hide. If given prop is function, `duration` and `easing` parameters from `Keyboard` event will be passed to the function, function should return `LayoutAnimation` compatible animation config. Or you can directlty pass animation config object. |
+| `animateOn` | `enum:string` | `'ios'` | Enables show/hide animation on given platform. Values: `['ios', 'android', 'all', 'none']`. |
+| `animationConfig` | `function` or `object` | `null` | For passing custom animations to show/hide. If given prop is function, `duration` and `easing` parameters from `Keyboard` event will be passed to the function, function should return `LayoutAnimation` compatible animation config. Or you can directly pass animation config object. |
 | `alwaysVisible` | `boolean` | `false` | When set to `true` Accessory View will be always visible at the bottom of the screen. Good for sticky `TextInput`'s |
-| `bumperHeight` | `number` | 15 | Bumper height to prevent visiual glitches if animation couldn't keep up with the keyboard animation. |
+| `bumperHeight` | `number` | 15 | Bumper height to prevent visual glitches if animation couldn't keep up with the keyboard animation. |
 | `visibleOpacity` | `number` | 1 | Opacity of the Accessory when it is visible. *Note:* Opacity is used for hiding the accessory to prevent render delays. |
 | `hiddenOpacity` | `number` | 0 | Opacity of the Accessory when it is hidden. |
 
 ### *KeyboardAccessoryNavigation*
+
 All the `KeyboardAccessoryView` props will be passed.
 
 | **Prop** | **Type** | **Default** | **Description** |
 |----------|----------|-------------|-----------------|
 | `doneButtonTitle` | `string` | `'Done'` | Title text to show on the right Button of Navigation View |
-| `tintColor` | `string` | `'#007AFF'` | Tint color for the arrows and done button | 
-| `doneButton` | `node` | `null` | Replace default Done Button. Non-Touchable node should be provided. | 
+| `tintColor` | `string` | `'#007AFF'` | Tint color for the arrows and done button |
+| `doneButton` | `node` | `null` | Replace default Done Button. Non-Touchable node should be provided. |
 | `nextButton` | `node` | `null` | Replace default Next Button. Non-Touchable node should be provided. |
 | `previousButton` | `node` | `null` | Replace default Previous Button. Non-Touchable node should be provided. |
 | `doneDisabled` | `boolean` | false | Disables Done Button |
 | `nextDisabled` | `boolean` | false | Disables Next Button |
+| `doneHidden` | `boolean` | false | Hides Done Button |
+| `nextHidden` | `boolean` | false | Hides Next Button |
 | `previousDisabled` | `boolean` | false | Disables Previous Button |
 | `accessoryStyle` | `object` | null | Style object or StyleSheet reference which will be applied to Navigation Accessory `View`. |
 | `doneButtonStyle` | `object` | null | Style object or StyleSheet reference which will be applied to Done Button `View` |
@@ -90,4 +103,4 @@ All the `KeyboardAccessoryView` props will be passed.
 
   ## Known Issues
 
-  - Accessory doesn't follow keyboard when closed with drag gesture. 
+  - Accessory doesn't follow keyboard when closed with drag gesture.
