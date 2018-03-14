@@ -7,7 +7,6 @@
     "email": "ardaogulcan@gmail.com"
   },
   "scripts": {
-    "postinstall": "cd example && npm install",
     "start": "./scripts/start-example.sh"
   },
   "repository": {
