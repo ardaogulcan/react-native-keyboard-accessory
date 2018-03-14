@@ -22,6 +22,7 @@ class ViewExample extends Component {
         <KeyboardAccessoryView alwaysVisible={true}>
           <View style={styles.textInputView}>
             <TextInput
+              underlineColorAndroid="transparent"
               style={styles.textInput}
               multiline={true} />
             <Button
@@ -55,6 +56,7 @@ const styles = StyleSheet.create({
     borderColor: '#CCC',
     padding: 10,
     fontSize: 16,
+    marginRight: 10,
     textAlignVertical: 'top'
   },
   textInputButton: {

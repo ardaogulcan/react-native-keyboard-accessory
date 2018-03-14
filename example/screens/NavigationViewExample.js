@@ -65,6 +65,7 @@ class ViewExample extends Component {
           <TextInput
             style={styles.textInput}
             ref="1"
+            underlineColorAndroid="transparent"
             placeholder="Dummy Text Input"
             blurOnSubmit={false}
             onFocus={this.handleFocus.bind(this, 1)}
@@ -72,6 +73,7 @@ class ViewExample extends Component {
           <TextInput
             style={styles.textInput}
             ref="2"
+            underlineColorAndroid="transparent"
             keyboardType="email-address"
             placeholder="Dummy Text Input Email"
             blurOnSubmit={false}
@@ -80,6 +82,7 @@ class ViewExample extends Component {
           <TextInput
             style={styles.textInput}
             ref="3"
+            underlineColorAndroid="transparent"
             keyboardType="numeric"
             placeholder="Dummy Text Input Numeric"
             blurOnSubmit={false}
