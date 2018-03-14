@@ -1,5 +1,9 @@
 # react-native-keyboard-accessory
 
+[![npm version](https://img.shields.io/npm/v/react-native-keyboard-accessory.svg)](https://www.npmjs.com/package/react-native-keyboard-accessory)
+[![npm total downloads](https://img.shields.io/npm/dt/react-native-keyboard-accessory.svg)](https://www.npmjs.com/package/react-native-keyboard-accessory)
+[![npm monthly downloads](https://img.shields.io/npm/dm/react-native-keyboard-accessory.svg)](https://www.npmjs.com/package/react-native-keyboard-accessory)
+
 A React Native Keyboard Accessory (View, Navigation) Component. Sticky views on keyboard.
 
 ![IOS View Example](https://media.giphy.com/media/ZFh86727hAbAc/giphy.gif)  ![IOS Navigation Example](https://media.giphy.com/media/NYsR2BtQaUaQw/giphy.gif)
