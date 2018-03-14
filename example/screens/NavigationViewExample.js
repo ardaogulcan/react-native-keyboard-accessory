@@ -5,6 +5,8 @@ import {
   View,
   TextInput,
   ScrollView,
+  Switch,
+  Text,
 } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
@@ -18,6 +20,8 @@ class ViewExample extends Component {
       activeInputRef: null,
       nextFocusDisabled: false,
       previousFocusDisabled: false,
+      buttonsDisabled: false,
+      buttonsHidden: false,
     };
   }
 
@@ -43,33 +47,53 @@ class ViewExample extends Component {
     return (
       <View style={styles.container}>
         <KeyboardAwareScrollView
-          contentContainerStyle={styles.contentContainer}>
+          contentContainerStyle={styles.contentContainer}
+        >
+          <View style={styles.switchInput}>
+            <Switch
+              value={this.state.buttonsHidden}
+              onValueChange={() => {
+                this.setState({
+                  buttonsHidden: !this.state.buttonsHidden
+                })
+              }}
+            />
+            <Text style={styles.switchInputText}>
+              Hide arrows
+            </Text>
+          </View>
           <TextInput
             style={styles.textInput}
             ref="1"
             placeholder="Dummy Text Input"
             blurOnSubmit={false}
-            onFocus={this.handleFocus.bind(this, 1)} />
+            onFocus={this.handleFocus.bind(this, 1)}
+          />
           <TextInput
             style={styles.textInput}
             ref="2"
             keyboardType="email-address"
             placeholder="Dummy Text Input Email"
             blurOnSubmit={false}
-            onFocus={this.handleFocus.bind(this, 2)} />
+            onFocus={this.handleFocus.bind(this, 2)}
+          />
           <TextInput
             style={styles.textInput}
             ref="3"
             keyboardType="numeric"
             placeholder="Dummy Text Input Numeric"
             blurOnSubmit={false}
-            onFocus={this.handleFocus.bind(this, 3)} />
+            onFocus={this.handleFocus.bind(this, 3)}
+          />
         </KeyboardAwareScrollView>
         <KeyboardAccessoryNavigation
           nextDisabled={this.state.nextFocusDisabled}
           previousDisabled={this.state.previousFocusDisabled}
+          nextHidden={this.state.buttonsHidden}
+          previousHidden={this.state.buttonsHidden}
           onNext={this.changeInputFocus.bind(this, 1)}
-          onPrevious={this.changeInputFocus.bind(this, -1)}/>
+          onPrevious={this.changeInputFocus.bind(this, -1)}
+        />
       </View>
     );
   }
@@ -93,6 +117,16 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 16,
     marginBottom: 10,
+  },
+  switchInput: {
+    flex: 1,
+    flexDirection: 'row',
+    marginBottom: 10,
+  },
+  switchInputText: {
+    alignSelf: 'center',
+    fontSize: 16,
+    marginLeft: 10,
   },
 });
 
