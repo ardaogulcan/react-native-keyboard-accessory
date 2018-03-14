@@ -1,5 +1,4 @@
 # react-native-keyboard-accessory
-**!!!Work In Progress!!!**
 
 A React Native Keyboard Accessory (View, Navigation) Component. Sticky views on keyboard.
 
@@ -87,9 +86,10 @@ All the `KeyboardAccessoryView` props will be passed.
 | `previousButton` | `node` | `null` | Replace default Previous Button. Non-Touchable node should be provided. |
 | `doneDisabled` | `boolean` | false | Disables Done Button |
 | `nextDisabled` | `boolean` | false | Disables Next Button |
+| `previousDisabled` | `boolean` | false | Disables Previous Button |
 | `doneHidden` | `boolean` | false | Hides Done Button |
 | `nextHidden` | `boolean` | false | Hides Next Button |
-| `previousDisabled` | `boolean` | false | Disables Previous Button |
+| `previousHidden` | `boolean` | false | Hides Previous Button |
 | `accessoryStyle` | `object` | null | Style object or StyleSheet reference which will be applied to Navigation Accessory `View`. |
 | `doneButtonStyle` | `object` | null | Style object or StyleSheet reference which will be applied to Done Button `View` |
 | `doneButtonTitleStyle` | `object` | null | Style object or StyleSheet reference which will be applied to Done Button `Text` |
