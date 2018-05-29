@@ -77,6 +77,7 @@ And use it inside your ``render()`` function:
 | `visibleOpacity` | `number` | 1 | Opacity of the Accessory when it is visible. *Note:* Opacity is used for hiding the accessory to prevent render delays. |
 | `hiddenOpacity` | `number` | 0 | Opacity of the Accessory when it is hidden. |
 | `hideBorder` | `boolean` | false | Set true if you want to hide top border of the Accessory |
+| `inSafeAreaView` | `boolean` | false | Set true if you want to adapt SafeAreaView on iPhone X |
 
 ### *KeyboardAccessoryNavigation*
 
