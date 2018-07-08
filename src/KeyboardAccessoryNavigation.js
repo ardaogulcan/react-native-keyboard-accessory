@@ -42,7 +42,7 @@ class KeyboardAccessoryNavigation extends Component {
       infoMessageStyle,
       nextButtonDirection,
       previousButtonDirection,
-      ...passThroughProps,
+      ...passThroughProps
     } = this.props;
 
     // Are both arrows hidden?
