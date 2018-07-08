@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import { Keyboard, Platform } from 'react-native'
-import { TabBarBottom } from 'react-navigation'
 
 export default class KeyboardAwareTabBarComponent extends React.PureComponent {
 
@@ -42,19 +41,15 @@ export default class KeyboardAwareTabBarComponent extends React.PureComponent {
   }
 
   render() {
-    const TabBarComponent = this.props.tabBarComponent;
+    const { TabBarComponent, ...componentProps } = this.props;
+    const { isVisible } = this.state;
 
-    return this.state.isVisible
-      ? <TabBarComponent {...this.props} />
+    return isVisible
+      ? <TabBarComponent {...componentProps} />
       : null
   }
 }
 
 KeyboardAwareTabBarComponent.propTypes = {
-  tabBarComponent: PropTypes.func
+  TabBarComponent: PropTypes.node.isRequired,
 };
-
-KeyboardAwareTabBarComponent.defaultProps = {
-  tabBarComponent: TabBarBottom
-};
-

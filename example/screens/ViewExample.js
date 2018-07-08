@@ -35,6 +35,7 @@ class ViewExample extends Component {
     );
   }
 }
+
 ViewExample.navigationOptions = {
   title: 'View Example',
 }

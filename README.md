@@ -107,6 +107,12 @@ All the `KeyboardAccessoryView` props will be passed.
 | `onNext` | `function` | null | Triggered on Next Button `press` |
 | `onPrevious` | `function` | null | Triggered on Previous Button `press` |
 
+### *KeyboardAwareTabBarComponent*
+
+| **Prop** | **Type** | **Default** | **Description** |
+|----------|----------|-------------|-----------------|
+| `TabBarComponent` | `node` |  | Provide TabBarComponent to render. Usually from `react-navigation` |
+
   ## Known Issues
 
   - Accessory doesn't follow keyboard when closed with drag gesture.
