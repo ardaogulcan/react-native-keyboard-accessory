@@ -6,3 +6,4 @@ npm-debug.*
 example/react-native-keyboard-accessory
 
 lib/
+.vscode

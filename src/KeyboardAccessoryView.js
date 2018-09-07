@@ -50,9 +50,6 @@ class KeyboardAccessoryView extends Component {
       visibleAccessoryHeight: 50,
       isKeyboardVisible: false,
     }
-
-    this.handleKeyboardShow = this.handleKeyboardShow.bind(this);
-    this.handleKeyboardHide= this.handleKeyboardHide.bind(this);
   }
 
   componentDidMount () {
@@ -68,14 +65,14 @@ class KeyboardAccessoryView extends Component {
     this.keyboardHideEventListener.remove();
   }
 
-  handleChildrenLayout(layoutEvent) {
+  handleChildrenLayout = (layoutEvent) => {
     this.setState({
       visibleAccessoryHeight: layoutEvent.nativeEvent.layout.height,
       accessoryHeight: this.props.alwaysVisible ? layoutEvent.nativeEvent.layout.height : 0,
     });
   }
 
-  handleKeyboardShow(keyboardEvent) {
+  handleKeyboardShow = (keyboardEvent) => {
     if (!keyboardEvent.endCoordinates) {
       return;
     }
@@ -112,12 +109,12 @@ class KeyboardAccessoryView extends Component {
 
     this.setState({
       isKeyboardVisible: true,
-      keyboardHeight: keyboardEvent.endCoordinates.height,
+      keyboardHeight: Platform.OS === 'ios' ? keyboardEvent.endCoordinates.height : 0,
       accessoryHeight: this.state.visibleAccessoryHeight,
     })
   }
 
-  handleKeyboardHide(keyboardEvent) {
+  handleKeyboardHide = (keyboardEvent) => {
     const { animateOn, animationConfig } = this.props;
 
     if (animateOn === 'all' || Platform.OS === animateOn) {
@@ -163,7 +160,7 @@ class KeyboardAccessoryView extends Component {
             height: accessoryHeight + bumperHeight + (inSafeAreaView ? (!isKeyboardVisible ? 20 : -10) : 0),
           }
         ]}>
-          <View onLayout={this.handleChildrenLayout.bind(this)}>
+          <View onLayout={this.handleChildrenLayout}>
             { this.props.children }
           </View>
         </View>

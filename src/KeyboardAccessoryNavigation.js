@@ -14,7 +14,7 @@ import KeyboardAccessoryView from './KeyboardAccessoryView';
 import AccessoryArrowButton from './components/AccessoryArrowButton';
 
 class KeyboardAccessoryNavigation extends Component {
-  handleDoneButton() {
+  handleDoneButton = () => {
     this.props.onDone && this.props.onDone();
     Keyboard.dismiss();
   }
@@ -95,7 +95,7 @@ class KeyboardAccessoryNavigation extends Component {
           )}
           <TouchableOpacity
             style={[styles.doneButton, doneButtonStyle]}
-            onPress={this.handleDoneButton.bind(this)}>
+            onPress={this.handleDoneButton}>
             { doneButton ||
               <Text style={[
                 styles.doneButtonText,

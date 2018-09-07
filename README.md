@@ -63,6 +63,12 @@ And use it inside your ``render()`` function:
 
 ***Important:*** KeyboardAccessoryNavigation should be positioned inside the Root Element which is covering the screen, mostly the top most view styled as ``{ flex: 1 }``.
 
+### For Ejected Apps
+
+For Android, make sure you have set `android:windowSoftInputMode` to `adjustResize` in `android/app/src/main/AndroidManifest.xml`
+
+FurtherInfo: https://developer.android.com/guide/topics/manifest/activity-element
+
 ## API
 
 ### *KeyboardAccessoryView*

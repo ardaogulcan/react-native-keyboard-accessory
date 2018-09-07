@@ -7,9 +7,6 @@ export default class KeyboardAwareTabBarComponent extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    this.keyboardWillShow = this.keyboardWillShow.bind(this);
-    this.keyboardWillHide = this.keyboardWillHide.bind(this);
-
     this.state = {
       isVisible: true
     }
@@ -28,13 +25,13 @@ export default class KeyboardAwareTabBarComponent extends React.PureComponent {
     this.keyboardWillHideSub.remove();
   }
 
-  keyboardWillShow(event) {
+  keyboardWillShow = (event) => {
     this.setState({
       isVisible: false
     })
   }
 
-  keyboardWillHide(event) {
+  keyboardWillHide = (event) => {
     this.setState({
       isVisible: true
     })
