@@ -8,8 +8,7 @@
   },
   "scripts": {
     "start": "npm run build && node scripts/setup-example && cd example && npm install && npm start",
-    "build": "node scripts/build",
-    "prepublish": "npm run build"
+    "build": "node scripts/build"
   },
   "repository": {
     "type": "git",
