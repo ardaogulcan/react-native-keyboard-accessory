@@ -12,12 +12,31 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 
 import { KeyboardAccessoryNavigation } from '../react-native-keyboard-accessory';
 
+let inputs = [
+  {
+    placeholder: 'Dummy Text Input',
+  },
+  {
+    keyboardType: 'email-address',
+    placeholder: 'Dummy Text Input Email',
+  },
+  {
+    keyboardType: 'numeric',
+    placeholder: 'Dummy Text Input Numeric',
+  },
+];
+
 class ViewExample extends Component {
   constructor(props) {
     super(props);
 
+    inputs = inputs.map(input => ({
+      ref: React.createRef(),
+      ...input,
+    }));
+
     this.state = {
-      activeInputRef: null,
+      activeInputIndex: 0,
       nextFocusDisabled: false,
       previousFocusDisabled: false,
       buttonsDisabled: false,
@@ -25,30 +44,36 @@ class ViewExample extends Component {
     };
   }
 
-  handleFocus(ref) {
+  handleFocus = index => () => {
     this.setState({
-      nextFocusDisabled: ref === 3,
-      previousFocusDisabled: ref === 1,
-      activeInputRef: ref,
+      nextFocusDisabled: index === inputs.length - 1,
+      previousFocusDisabled: index === 0,
+      activeInputIndex: index,
     });
   }
 
-  changeInputFocus(direction = 1) {
-    if ((this.state.nextFocusDisabled && direction === 1) ||
-        (this.state.previousFocusDisabled && direction === -1)) {
+  handleFocusNext = () => {
+    const { nextFocusDisabled, activeInputIndex } = this.state;
+    if (nextFocusDisabled) {
       return;
     }
 
-    const focusingRef = this.state.activeInputRef + direction;
-    this.refs[`${focusingRef}`].focus();
+    inputs[activeInputIndex + 1].ref.current.focus();
+  }
+
+  handleFocusPrevious = () => {
+    const { previousFocusDisabled, activeInputIndex } = this.state;
+    if (previousFocusDisabled) {
+      return;
+    }
+
+    inputs[activeInputIndex - 1].ref.current.focus();
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <KeyboardAwareScrollView
-          contentContainerStyle={styles.contentContainer}
-        >
+        <KeyboardAwareScrollView contentContainerStyle={styles.contentContainer}>
           <View style={styles.switchInput}>
             <Switch
               value={this.state.buttonsHidden}
@@ -62,40 +87,26 @@ class ViewExample extends Component {
               Hide arrows
             </Text>
           </View>
-          <TextInput
-            style={styles.textInput}
-            ref="1"
-            underlineColorAndroid="transparent"
-            placeholder="Dummy Text Input"
-            blurOnSubmit={false}
-            onFocus={this.handleFocus.bind(this, 1)}
-          />
-          <TextInput
-            style={styles.textInput}
-            ref="2"
-            underlineColorAndroid="transparent"
-            keyboardType="email-address"
-            placeholder="Dummy Text Input Email"
-            blurOnSubmit={false}
-            onFocus={this.handleFocus.bind(this, 2)}
-          />
-          <TextInput
-            style={styles.textInput}
-            ref="3"
-            underlineColorAndroid="transparent"
-            keyboardType="numeric"
-            placeholder="Dummy Text Input Numeric"
-            blurOnSubmit={false}
-            onFocus={this.handleFocus.bind(this, 3)}
-          />
+          { inputs.map(({ placeholder, keyboardType, ref }, index) =>
+            <TextInput
+              key={`input_${index}`}
+              ref={ref}
+              style={styles.textInput}
+              underlineColorAndroid="transparent"
+              placeholder={placeholder}
+              keyboardType={keyboardType}
+              blurOnSubmit={false}
+              onFocus={this.handleFocus(index)}
+            />
+          )}
         </KeyboardAwareScrollView>
         <KeyboardAccessoryNavigation
           nextDisabled={this.state.nextFocusDisabled}
           previousDisabled={this.state.previousFocusDisabled}
           nextHidden={this.state.buttonsHidden}
           previousHidden={this.state.buttonsHidden}
-          onNext={this.changeInputFocus.bind(this, 1)}
-          onPrevious={this.changeInputFocus.bind(this, -1)}
+          onNext={this.handleFocusNext}
+          onPrevious={this.handleFocusPrevious}
         />
       </View>
     );
