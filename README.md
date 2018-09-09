@@ -67,7 +67,13 @@ And use it inside your ``render()`` function:
 
 For Android, make sure you have set `android:windowSoftInputMode` to `adjustResize` in `android/app/src/main/AndroidManifest.xml`
 
-FurtherInfo: https://developer.android.com/guide/topics/manifest/activity-element
+And set `androidAdjustResize` to `true`. For example,
+
+```jsx
+<KeyboardAccessoryView androidAdjustResize />
+// or
+<KeyboardAccessoryNavigation androidAdjustResize />
+```
 
 ## API
 
@@ -84,6 +90,7 @@ FurtherInfo: https://developer.android.com/guide/topics/manifest/activity-elemen
 | `hiddenOpacity` | `number` | 0 | Opacity of the Accessory when it is hidden. |
 | `hideBorder` | `boolean` | false | Set true if you want to hide top border of the Accessory |
 | `inSafeAreaView` | `boolean` | false | Set true if you want to adapt SafeAreaView on iPhone X |
+| `androidAdjustResize` | `boolean` | false | Set true in ejected apps to adjust resize |
 
 ### *KeyboardAccessoryNavigation*
 

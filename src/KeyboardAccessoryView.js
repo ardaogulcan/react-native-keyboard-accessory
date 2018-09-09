@@ -79,8 +79,8 @@ class KeyboardAccessoryView extends Component {
 
     const keyboardHeight = Platform.select({
       ios: keyboardEvent.endCoordinates.height,
-      android: this.props.androidWindowSoftInputAdjustResize
-        ? this.props.bumperHeight
+      android: this.props.androidAdjustResize
+        ? 0
         : keyboardEvent.endCoordinates.height
     });
 
@@ -109,7 +109,7 @@ class KeyboardAccessoryView extends Component {
 
     this.setState({
       isKeyboardVisible: true,
-      keyboardHeight: Platform.OS === 'ios' ? keyboardEvent.endCoordinates.height : 0,
+      keyboardHeight: keyboardHeight,
       accessoryHeight: this.state.visibleAccessoryHeight,
     })
   }
@@ -183,7 +183,7 @@ KeyboardAccessoryView.propTypes = {
     PropTypes.number,
     PropTypes.bool
   ]),
-  androidWindowSoftInputAdjustResize: PropTypes.bool,
+  androidAdjustResize: PropTypes.bool,
   alwaysVisible: PropTypes.bool,
   hideBorder: PropTypes.bool,
   inSafeAreaView: PropTypes.bool,
@@ -194,7 +194,7 @@ KeyboardAccessoryView.defaultProps = {
   bumperHeight: 15,
   visibleOpacity: 1,
   hiddenOpacity: 0,
-  androidWindowSoftInputAdjustResize: false,
+  androidAdjustResize: false,
   alwaysVisible: false,
   hideBorder: false,
   inSafeAreaView: false,
