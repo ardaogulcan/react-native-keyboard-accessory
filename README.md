@@ -8,6 +8,10 @@ A React Native Keyboard Accessory (View, Navigation) Component. Sticky views on 
 
 ![IOS View Example](https://media.giphy.com/media/ZFh86727hAbAc/giphy.gif)  ![IOS Navigation Example](https://media.giphy.com/media/NYsR2BtQaUaQw/giphy.gif)
 
+**Expo Snack Playground**
+
+https://snack.expo.io/@ardaogulcan/react-native-keyboard-accessory-playground
+
 ## Installation
 
 Via npm:
