@@ -19,9 +19,9 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "expo": "^25.0.0",
-    "react": "16.2.0",
-    "react-native": "0.52.0",
+    "expo": "^30.0.1",
+    "react": "16.3.1",
+    "react-native": "0.55.4",
     "react-native-keyboard-aware-scroll-view": "^0.4.4",
     "react-navigation": "^1.5.0"
   }
