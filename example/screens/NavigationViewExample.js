@@ -8,11 +8,21 @@ import {
   Switch,
   Text,
 } from 'react-native';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 import { KeyboardAccessoryNavigation } from '../react-native-keyboard-accessory';
 
 let inputs = [
+  {
+    placeholder: 'Dummy Text Input',
+  },
+  {
+    keyboardType: 'email-address',
+    placeholder: 'Dummy Text Input Email',
+  },
+  {
+    keyboardType: 'numeric',
+    placeholder: 'Dummy Text Input Numeric',
+  },
   {
     placeholder: 'Dummy Text Input',
   },
@@ -73,7 +83,7 @@ class ViewExample extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <KeyboardAwareScrollView contentContainerStyle={styles.contentContainer}>
+        <ScrollView contentContainerStyle={styles.contentContainer}>
           <View style={styles.switchInput}>
             <Switch
               value={this.state.buttonsHidden}
@@ -99,8 +109,9 @@ class ViewExample extends Component {
               onFocus={this.handleFocus(index)}
             />
           )}
-        </KeyboardAwareScrollView>
+        </ScrollView>
         <KeyboardAccessoryNavigation
+          avoidKeyboard={true}
           nextDisabled={this.state.nextFocusDisabled}
           previousDisabled={this.state.previousFocusDisabled}
           nextHidden={this.state.buttonsHidden}

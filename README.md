@@ -79,6 +79,11 @@ And set `androidAdjustResize` to `true`. For example,
 <KeyboardAccessoryNavigation androidAdjustResize />
 ```
 
+### To maintain KeyboardAvoidingView behavior
+```jsx
+<KeyboardAccessoryNavigation avoidKeyboard />
+```
+
 ## API
 
 ### *KeyboardAccessoryView*
@@ -95,6 +100,7 @@ And set `androidAdjustResize` to `true`. For example,
 | `hideBorder` | `boolean` | false | Set true if you want to hide top border of the Accessory |
 | `inSafeAreaView` | `boolean` | false | Set true if you want to adapt SafeAreaView on iPhone X |
 | `androidAdjustResize` | `boolean` | false | Set true in ejected apps to adjust resize |
+| `avoidKeyboard` | `boolean` | false | Set true if you want accessory to maintain KeyboardAvoidingView behavior. You shouldn't use any other Keyboard Avoiding library when you set this to `true` |
 
 ### *KeyboardAccessoryNavigation*
 
