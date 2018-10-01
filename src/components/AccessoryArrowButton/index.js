@@ -6,7 +6,15 @@ import {
 
 import Arrow from '../Arrow';
 
-const AccessoryArrowButton = ({ hidden = false, disabled = false, onPress, ...props }) => {
+const AccessoryArrowButton = ({
+  hidden = false,
+  disabled = false,
+  onPress,
+  customButton,
+  direction,
+  tintColor,
+  ...passThroughProps
+}) => {
   if (hidden) {
     return null;
   }
@@ -14,13 +22,13 @@ const AccessoryArrowButton = ({ hidden = false, disabled = false, onPress, ...pr
   return (
     <TouchableOpacity
       disabled={disabled}
-      style={props.style}
-      onPress={onPress}>
-      { props.customButton ? props.customButton : (
+      onPress={onPress}
+      {...passThroughProps}>
+      { customButton ? customButton : (
         <Arrow
-          direction={props.direction}
+          direction={direction}
           disabled={disabled}
-          tintColor={props.tintColor} />
+          tintColor={tintColor} />
       )}
     </TouchableOpacity>
   );
