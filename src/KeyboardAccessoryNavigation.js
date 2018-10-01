@@ -72,7 +72,7 @@ class KeyboardAccessoryNavigation extends Component {
                 onPress={onPrevious}
               />
               <AccessoryArrowButton
-                style={nextButtonStyle && { style: nextButtonStyle }}
+                style={nextButtonStyle}
                 hidden={nextHidden}
                 disabled={nextDisabled}
                 direction={nextButtonDirection}
