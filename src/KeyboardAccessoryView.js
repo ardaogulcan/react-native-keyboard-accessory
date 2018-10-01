@@ -146,9 +146,13 @@ class KeyboardAccessoryView extends Component {
       style,
       inSafeAreaView,
       safeAreaBumper,
+      avoidKeyboard,
     } = this.props;
+
+    const visibleHeight = accessoryHeight + (avoidKeyboard ? keyboardHeight : 0);
+
     return (
-      <View style={{ height: (isKeyboardVisible || alwaysVisible ? accessoryHeight + keyboardHeight  : 0) }}>
+      <View style={{ height: (isKeyboardVisible || alwaysVisible ? visibleHeight  : 0) }}>
         <View style={[
           styles.accessory,
           !hideBorder && styles.accessoryBorder,
@@ -186,6 +190,7 @@ KeyboardAccessoryView.propTypes = {
   alwaysVisible: PropTypes.bool,
   hideBorder: PropTypes.bool,
   inSafeAreaView: PropTypes.bool,
+  avoidKeyboard: PropTypes.bool,
 }
 
 KeyboardAccessoryView.defaultProps = {
@@ -197,6 +202,7 @@ KeyboardAccessoryView.defaultProps = {
   alwaysVisible: false,
   hideBorder: false,
   inSafeAreaView: false,
+  avoidKeyboard: false,
 }
 
 const styles = StyleSheet.create({
