@@ -134,7 +134,7 @@ All the `KeyboardAccessoryView` props will be passed.
 
 | **Prop** | **Type** | **Default** | **Description** |
 |----------|----------|-------------|-----------------|
-| `TabBarComponent` | `node` |  | Provide TabBarComponent to render. Usually from `react-navigation` |
+| `TabBarComponent` | `node`, `function` |  | Provide TabBarComponent to render. Usually from `react-navigation` |
 
   ## Known Issues
 
