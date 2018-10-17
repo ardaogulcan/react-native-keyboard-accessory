@@ -7,7 +7,8 @@ import {
   LayoutAnimation,
   Platform,
   StyleSheet,
-  ViewPropTypes
+  ViewPropTypes,
+  Dimensions
 } from 'react-native';
 
 const accessoryAnimation = (duration, easing, animationConfig = null) => {
@@ -39,6 +40,9 @@ const accessoryAnimation = (duration, easing, animationConfig = null) => {
     LayoutAnimation.Properties.opacity,
   )
 }
+
+const { height, width } = Dimensions.get('window')
+const isSafeAreaSupported = Platform.OS === 'ios' && (height > 800 || width > 800)
 
 class KeyboardAccessoryView extends Component {
   constructor(props) {
@@ -150,6 +154,7 @@ class KeyboardAccessoryView extends Component {
     } = this.props;
 
     const visibleHeight = accessoryHeight + (avoidKeyboard ? keyboardHeight : 0);
+    const applySafeArea = isSafeAreaSupported && inSafeAreaView;
 
     return (
       <View style={{ height: (isKeyboardVisible || alwaysVisible ? visibleHeight  : 0) }}>
@@ -159,8 +164,8 @@ class KeyboardAccessoryView extends Component {
           style,
           {
             opacity: (isKeyboardVisible || alwaysVisible ? visibleOpacity : hiddenOpacity),
-            bottom: keyboardHeight - bumperHeight - (inSafeAreaView ? 20 : 0),
-            height: accessoryHeight + bumperHeight + (inSafeAreaView ? (!isKeyboardVisible ? 20 : -10) : 0),
+            bottom: keyboardHeight - bumperHeight - (applySafeArea ? 20 : 0),
+            height: accessoryHeight + bumperHeight + (applySafeArea ? (!isKeyboardVisible ? 20 : -10) : 0),
           }
         ]}>
           <View onLayout={this.handleChildrenLayout}>
