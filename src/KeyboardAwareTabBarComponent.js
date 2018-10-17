@@ -48,5 +48,5 @@ export default class KeyboardAwareTabBarComponent extends React.PureComponent {
 }
 
 KeyboardAwareTabBarComponent.propTypes = {
-  TabBarComponent: PropTypes.node.isRequired,
+  TabBarComponent: PropTypes.oneOfType([ PropTypes.node, PropTypes.func ]).isRequired,
 };
