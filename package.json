@@ -1,6 +1,6 @@
 {
   "name": "react-native-keyboard-accessory",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "A React Native Keyboard Accessory (View, Navigation) Component. Sticky views on keyboard.",
   "author": {
     "name": "Arda Oğulcan Pektaş",
