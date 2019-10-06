@@ -72,7 +72,7 @@ class KeyboardAccessoryView extends Component {
   handleChildrenLayout = (layoutEvent) => {
     this.setState({
       visibleAccessoryHeight: layoutEvent.nativeEvent.layout.height,
-      accessoryHeight: this.props.alwaysVisible ? layoutEvent.nativeEvent.layout.height : 0,
+      accessoryHeight: this.props.alwaysVisible || this.state.isKeyboardVisible ? layoutEvent.nativeEvent.layout.height : 0,
     });
   }
 
