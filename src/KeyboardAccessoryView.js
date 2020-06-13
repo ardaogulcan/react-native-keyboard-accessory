@@ -151,10 +151,12 @@ class KeyboardAccessoryView extends Component {
       inSafeAreaView,
       safeAreaBumper,
       avoidKeyboard,
+      children,
     } = this.props;
 
     const visibleHeight = accessoryHeight + (avoidKeyboard ? keyboardHeight : 0);
     const applySafeArea = isSafeAreaSupported && inSafeAreaView;
+    const isChildRenderProp = typeof children === "function";
 
     return (
       <View style={{ height: (isKeyboardVisible || alwaysVisible ? visibleHeight  : 0) }}>
@@ -169,7 +171,9 @@ class KeyboardAccessoryView extends Component {
           }
         ]}>
           <View onLayout={this.handleChildrenLayout}>
-            { this.props.children }
+            { isChildRenderProp
+               ? children({ isKeyboardVisible })
+               : children }
           </View>
         </View>
       </View>
