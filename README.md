@@ -52,6 +52,25 @@ Use it inside your `render()` function:
 
 ***Important:*** KeyboardAccessoryView should be positioned inside the Root Element which is covering the screen, mostly the top most view styled as ``{ flex: 1 }``.
 
+#### Render Prop
+
+Alternatively, you can also pass a function as the `children` prop of the component. This allows you to access an `isKeyboardVisible` prop which is useful to render things conditionally based on the visibility of the keyboard:
+
+```jsx
+<KeyboardAccessoryView>
+  {({ isKeyboardVisible }) => {
+    return (
+      <>
+        <Text>Always visible</Text>
+        {!isKeyboardVisible ? (
+          <Text>Hidden when keyboard is visible</Text>
+        ) : null}
+      </>
+    );
+  }}
+</KeyboardAccessoryView>
+```
+
 ### Keyboard Accessory Navigation
 Import ``react-native-keyboard-accessory``
 
