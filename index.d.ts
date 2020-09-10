@@ -49,7 +49,7 @@ export interface KeyboardAccessoryNavigationProps
   doneButtonStyle?: StyleProp<ViewStyle>;
   doneButtonTitleStyle?: StyleProp<ViewStyle>;
   infoMessageStyle?: StyleProp<ViewStyle>;
-  doneButtonHitslop: Insets;
+  doneButtonHitslop?: Insets;
   previousButtonStyle?: StyleProp<ViewStyle>;
   nextButtonStyle?: StyleProp<ViewStyle>;
   nextButtonDirection?: KeyboardAccessoryNavigationArrowDirection;
