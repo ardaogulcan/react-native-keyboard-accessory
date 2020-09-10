@@ -1,4 +1,4 @@
-import { ViewStyle, LayoutAnimationConfig, StyleProp } from "react-native";
+import { ViewStyle, LayoutAnimationConfig, StyleProp, Insets } from "react-native";
 import { ReactNode } from "react";
 
 export type KeyboardAccessoryViewRenderProp = ({
@@ -49,10 +49,13 @@ export interface KeyboardAccessoryNavigationProps
   doneButtonStyle?: StyleProp<ViewStyle>;
   doneButtonTitleStyle?: StyleProp<ViewStyle>;
   infoMessageStyle?: StyleProp<ViewStyle>;
+  doneButtonHitslop: Insets;
   previousButtonStyle?: StyleProp<ViewStyle>;
   nextButtonStyle?: StyleProp<ViewStyle>;
   nextButtonDirection?: KeyboardAccessoryNavigationArrowDirection;
+  nextButtonHitslop?: Insets;
   previousButtonDirection?: KeyboardAccessoryNavigationArrowDirection;
+  previousButtonHitslop?: Insets;
   onDone?: () => void;
   onNext?: () => void;
   onPrevious?: () => void;

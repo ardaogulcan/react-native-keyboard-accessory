@@ -39,9 +39,12 @@ class KeyboardAccessoryNavigation extends Component {
       previousButtonStyle,
       doneButtonStyle,
       doneButtonTitleStyle,
+      doneButtonHitslop,
       infoMessageStyle,
       nextButtonDirection,
+      nextButtonHitslop,
       previousButtonDirection,
+      previousButtonHitslop,
       ...passThroughProps
     } = this.props;
 
@@ -67,6 +70,7 @@ class KeyboardAccessoryNavigation extends Component {
                 hidden={previousHidden}
                 disabled={previousDisabled}
                 direction={previousButtonDirection}
+                hitSlop={previousButtonHitslop}
                 customButton={previousButton}
                 tintColor={tintColor}
                 onPress={onPrevious}
@@ -76,6 +80,7 @@ class KeyboardAccessoryNavigation extends Component {
                 hidden={nextHidden}
                 disabled={nextDisabled}
                 direction={nextButtonDirection}
+                hitSlop={nextButtonHitslop}
                 customButton={nextButton}
                 tintColor={tintColor}
                 onPress={onNext}
@@ -95,7 +100,8 @@ class KeyboardAccessoryNavigation extends Component {
           )}
           <TouchableOpacity
             style={[styles.doneButton, doneButtonStyle]}
-            onPress={this.handleDoneButton}>
+            onPress={this.handleDoneButton}
+            hitSlop={doneButtonHitslop}>
             { doneButton ||
               <Text style={[
                 styles.doneButtonText,
@@ -136,9 +142,27 @@ KeyboardAccessoryNavigation.propTypes = {
   nextButtonStyle: (View.propTypes||ViewPropTypes).style,
   doneButtonStyle: (View.propTypes||ViewPropTypes).style,
   doneButtonTitleStyle: Text.propTypes.style,
+  doneButtonHitslop: PropTypes.shape({
+    left: PropTypes.number,
+    top: PropTypes.number,
+    right: PropTypes.number,
+    bottom: PropTypes.number,
+  }),
   infoMessageStyle: Text.propTypes.style,
   nextButtonDirection: PropTypes.oneOf(['up', 'down', 'left', 'right']),
+  nextButtonHitslop: PropTypes.shape({
+    left: PropTypes.number,
+    top: PropTypes.number,
+    right: PropTypes.number,
+    bottom: PropTypes.number,
+  }),
   previousButtonDirection: PropTypes.oneOf(['up', 'down', 'left', 'right']),
+  previousButtonHitslop: PropTypes.shape({
+    left: PropTypes.number,
+    top: PropTypes.number,
+    right: PropTypes.number,
+    bottom: PropTypes.number,
+  }),
 }
 
 KeyboardAccessoryNavigation.defaultProps = {
@@ -148,8 +172,11 @@ KeyboardAccessoryNavigation.defaultProps = {
   previousDisabled: false,
   nextHidden: false,
   previousHidden: false,
+  doneButtonHitslop: { left: 0, top: 0, right: 0, bottom: 0 },
   nextButtonDirection: 'down',
+  nextButtonHitslop: { left: 0, top: 0, right: 0, bottom: 0 },
   previousButtonDirection: 'up',
+  previousButtonHitslop: { left: 0, top: 0, right: 0, bottom: 0 }
 }
 
 const styles = StyleSheet.create({
