@@ -142,27 +142,36 @@ KeyboardAccessoryNavigation.propTypes = {
   nextButtonStyle: (View.propTypes||ViewPropTypes).style,
   doneButtonStyle: (View.propTypes||ViewPropTypes).style,
   doneButtonTitleStyle: Text.propTypes.style,
-  doneButtonHitslop: PropTypes.shape({
-    left: PropTypes.number,
-    top: PropTypes.number,
-    right: PropTypes.number,
-    bottom: PropTypes.number,
-  }),
+  doneButtonHitslop: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.shape({
+      left: PropTypes.number,
+      top: PropTypes.number,
+      right: PropTypes.number,
+      bottom: PropTypes.number
+    }),
+  ]),
   infoMessageStyle: Text.propTypes.style,
   nextButtonDirection: PropTypes.oneOf(['up', 'down', 'left', 'right']),
-  nextButtonHitslop: PropTypes.shape({
-    left: PropTypes.number,
-    top: PropTypes.number,
-    right: PropTypes.number,
-    bottom: PropTypes.number,
-  }),
+  nextButtonHitslop: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.shape({
+      left: PropTypes.number,
+      top: PropTypes.number,
+      right: PropTypes.number,
+      bottom: PropTypes.number
+    }),
+  ]),
   previousButtonDirection: PropTypes.oneOf(['up', 'down', 'left', 'right']),
-  previousButtonHitslop: PropTypes.shape({
-    left: PropTypes.number,
-    top: PropTypes.number,
-    right: PropTypes.number,
-    bottom: PropTypes.number,
-  }),
+  previousButtonHitslop: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.shape({
+      left: PropTypes.number,
+      top: PropTypes.number,
+      right: PropTypes.number,
+      bottom: PropTypes.number
+    }),
+  ]),
 }
 
 KeyboardAccessoryNavigation.defaultProps = {
