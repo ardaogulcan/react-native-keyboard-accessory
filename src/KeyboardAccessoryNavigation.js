@@ -181,11 +181,8 @@ KeyboardAccessoryNavigation.defaultProps = {
   previousDisabled: false,
   nextHidden: false,
   previousHidden: false,
-  doneButtonHitslop: { left: 0, top: 0, right: 0, bottom: 0 },
   nextButtonDirection: 'down',
-  nextButtonHitslop: { left: 0, top: 0, right: 0, bottom: 0 },
   previousButtonDirection: 'up',
-  previousButtonHitslop: { left: 0, top: 0, right: 0, bottom: 0 }
 }
 
 const styles = StyleSheet.create({
