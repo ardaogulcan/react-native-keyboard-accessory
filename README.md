@@ -141,10 +141,13 @@ All the `KeyboardAccessoryView` props will be passed.
 | `accessoryStyle` | `object` | null | Style object or StyleSheet reference which will be applied to Navigation Accessory `View`. |
 | `doneButtonStyle` | `object` | null | Style object or StyleSheet reference which will be applied to Done Button `View` |
 | `doneButtonTitleStyle` | `object` | null | Style object or StyleSheet reference which will be applied to Done Button `Text` |
+| `doneButtonHitslop` | `Insets` | { left: 0, top: 0, right: 0, bottom: 0 } | This defines how far your touch can start away from the doneButton |
 | `previousButtonStyle` | `object` | 0 | Style object or StyleSheet reference which will be applied to Previous Button `View` |
 | `nextButtonStyle` | `object` | 0 | Style object or StyleSheet reference which will be applied to Next Button `View` |
 | `nextButtonDirection` | `enum:string` | `'down'` | Arrow direction for the Next Button. Values: `['down', 'up', 'right', 'left']`. |
+| `nextButtonHitslop` | `Insets` | { left: 0, top: 0, right: 0, bottom: 0 } | This defines how far your touch can start away from the nextButton |
 | `previousButtonDirection` | `enum:string` | `'up'` | Arrow direction for the Previous Button. Values: `['down', 'up', 'right', 'left']`. |
+| `previousButtonHitslop` | `Insets` | { left: 0, top: 0, right: 0, bottom: 0 } | This defines how far your touch can start away from the previousButton |
 | `onDone` | `function` | null | Triggered on Done Button `press` |
 | `onNext` | `function` | null | Triggered on Next Button `press` |
 | `onPrevious` | `function` | null | Triggered on Previous Button `press` |
