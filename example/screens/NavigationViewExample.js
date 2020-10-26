@@ -36,7 +36,7 @@ let inputs = [
   },
 ];
 
-class ViewExample extends Component {
+class NavigationViewExample extends Component {
   constructor(props) {
     super(props);
 
@@ -76,7 +76,7 @@ class ViewExample extends Component {
     if (previousFocusDisabled) {
       return;
     }
-
+    
     inputs[activeInputIndex - 1].ref.current.focus();
   }
 
@@ -111,19 +111,20 @@ class ViewExample extends Component {
           )}
         </ScrollView>
         <KeyboardAccessoryNavigation
-          avoidKeyboard={true}
           nextDisabled={this.state.nextFocusDisabled}
           previousDisabled={this.state.previousFocusDisabled}
           nextHidden={this.state.buttonsHidden}
           previousHidden={this.state.buttonsHidden}
           onNext={this.handleFocusNext}
           onPrevious={this.handleFocusPrevious}
+          avoidKeyboard
+          androidAdjustResize
         />
       </View>
     );
   }
 }
-ViewExample.navigationOptions = {
+NavigationViewExample.navigationOptions = {
   title: 'Navigation View Example',
 }
 
@@ -155,4 +156,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ViewExample;
+export default NavigationViewExample;

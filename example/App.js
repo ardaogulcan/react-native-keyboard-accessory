@@ -1,16 +1,23 @@
-import React from 'react';
+import React from "react";
 
-import { StackNavigator } from 'react-navigation';
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
-import ViewExample from './screens/ViewExample';
-import NavigationViewExample from './screens/NavigationViewExample';
+import ViewExample from "./screens/ViewExample";
+import NavigationViewExample from "./screens/NavigationViewExample";
 
-export default StackNavigator({
-  ViewExample: {
-    screen: ViewExample,
-  },
-  NavigationView: {
-    screen: NavigationViewExample,
-  },
-});
+const Stack = createStackNavigator();
 
+const App = () => (
+  <NavigationContainer>
+    <Stack.Navigator initialRouteName="ViewExample">
+      <Stack.Screen name="ViewExample" component={ViewExample} />
+      <Stack.Screen
+        name="NavigationViewExample"
+        component={NavigationViewExample}
+      />
+    </Stack.Navigator>
+  </NavigationContainer>
+);
+
+export default App;
