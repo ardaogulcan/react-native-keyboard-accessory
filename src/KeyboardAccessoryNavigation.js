@@ -7,7 +7,6 @@ import {
   Text,
   TouchableOpacity,
   Keyboard,
-  ViewPropTypes,
 } from 'react-native';
 
 import KeyboardAccessoryView from './KeyboardAccessoryView';
@@ -137,42 +136,45 @@ KeyboardAccessoryNavigation.propTypes = {
   nextHidden: PropTypes.bool,
   previousHidden: PropTypes.bool,
   tintColor: PropTypes.string,
-  accessoryStyle: (View.propTypes||ViewPropTypes).style,
-  previousButtonStyle: (View.propTypes||ViewPropTypes).style,
-  nextButtonStyle: (View.propTypes||ViewPropTypes).style,
-  doneButtonStyle: (View.propTypes||ViewPropTypes).style,
-  doneButtonTitleStyle: Text.propTypes.style,
+  accessoryStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  previousButtonStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  nextButtonStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  doneButtonStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  doneButtonTitleStyle: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array,
+  ]),
   doneButtonHitslop: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.shape({
       left: PropTypes.number,
       top: PropTypes.number,
       right: PropTypes.number,
-      bottom: PropTypes.number
+      bottom: PropTypes.number,
     }),
   ]),
-  infoMessageStyle: Text.propTypes.style,
-  nextButtonDirection: PropTypes.oneOf(['up', 'down', 'left', 'right']),
+  infoMessageStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  nextButtonDirection: PropTypes.oneOf(["up", "down", "left", "right"]),
   nextButtonHitslop: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.shape({
       left: PropTypes.number,
       top: PropTypes.number,
       right: PropTypes.number,
-      bottom: PropTypes.number
+      bottom: PropTypes.number,
     }),
   ]),
-  previousButtonDirection: PropTypes.oneOf(['up', 'down', 'left', 'right']),
+  previousButtonDirection: PropTypes.oneOf(["up", "down", "left", "right"]),
   previousButtonHitslop: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.shape({
       left: PropTypes.number,
       top: PropTypes.number,
       right: PropTypes.number,
-      bottom: PropTypes.number
+      bottom: PropTypes.number,
     }),
   ]),
-}
+};
 
 KeyboardAccessoryNavigation.defaultProps = {
   doneButtonTitle: 'Done',

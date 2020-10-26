@@ -7,7 +7,6 @@ import {
   LayoutAnimation,
   Platform,
   StyleSheet,
-  ViewPropTypes,
   Dimensions
 } from 'react-native';
 
@@ -182,25 +181,19 @@ class KeyboardAccessoryView extends Component {
 }
 
 KeyboardAccessoryView.propTypes = {
-  style: (View.propTypes||ViewPropTypes).style,
-  animateOn: PropTypes.oneOf(['ios', 'android', 'all', 'none']),
-  animationConfig: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.func
-  ]),
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  animateOn: PropTypes.oneOf(["ios", "android", "all", "none"]),
+  animationConfig: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   bumperHeight: PropTypes.number,
   visibleOpacity: PropTypes.number,
   hiddenOpacity: PropTypes.number,
-  onKeyboardShowDelay: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.bool
-  ]),
+  onKeyboardShowDelay: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
   androidAdjustResize: PropTypes.bool,
   alwaysVisible: PropTypes.bool,
   hideBorder: PropTypes.bool,
   inSafeAreaView: PropTypes.bool,
   avoidKeyboard: PropTypes.bool,
-}
+};
 
 KeyboardAccessoryView.defaultProps = {
   animateOn: 'ios',
