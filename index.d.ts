@@ -7,7 +7,7 @@ export type KeyboardAccessoryViewRenderProp = ({
   isKeyboardVisible: boolean;
 }) => ReactNode;
 
-export interface KeyboardAccessoryViewProps {
+export interface KeyboardAccessoryProps {
   style?: StyleProp<ViewStyle>;
   animateOn?: "ios" | "android" | "all" | "none";
   animationConfig?: (() => LayoutAnimationConfig) | LayoutAnimationConfig;
@@ -20,6 +20,10 @@ export interface KeyboardAccessoryViewProps {
   inSafeAreaView?: boolean;
   androidAdjustResize?: boolean;
   avoidKeyboard?: boolean;
+}
+
+export interface KeyboardAccessoryViewProps 
+  extends KeyboardAccessoryProps {
   children: KeyboardAccessoryViewRenderProp | ReactNode;
 }
 
@@ -32,7 +36,7 @@ export type KeyboardAccessoryNavigationArrowDirection =
   | "left";
 
 export interface KeyboardAccessoryNavigationProps
-  extends KeyboardAccessoryViewProps {
+  extends KeyboardAccessoryProps {
   doneButtonTitle?: string;
   tintColor?: string;
   doneButton?: ReactNode;
