@@ -7,7 +7,7 @@ export type KeyboardAccessoryViewRenderProp = ({
   isKeyboardVisible: boolean;
 }) => ReactNode;
 
-export interface KeyboardAccessoryProps {
+interface KeyboardAccessoryProps {
   style?: StyleProp<ViewStyle>;
   animateOn?: "ios" | "android" | "all" | "none";
   animationConfig?: (() => LayoutAnimationConfig) | LayoutAnimationConfig;
