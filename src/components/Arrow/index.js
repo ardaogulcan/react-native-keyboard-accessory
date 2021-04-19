@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
   arrowImage: {
     width: 21,
     height: 12,
+    resizeMode: 'contain',
   }
 });
 
