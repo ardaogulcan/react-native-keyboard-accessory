@@ -15,6 +15,7 @@ interface KeyboardAccessoryProps {
   bumperHeight?: number;
   visibleOpacity?: number;
   onKeyboardShowDelay?: boolean | number;
+  heightProperty?: 'height' | 'minHeight';
   hiddenOpacity?: number;
   hideBorder?: boolean;
   inSafeAreaView?: boolean;
