@@ -16,7 +16,7 @@ class ViewExample extends Component {
             }}
           />
         </ScrollView>
-        <KeyboardAccessoryView alwaysVisible={true} androidAdjustResize>
+        <KeyboardAccessoryView heightProperty="minHeight" alwaysVisible={true} androidAdjustResize>
           {({ isKeyboardVisible }) => (
             <View style={styles.textInputView}>
               <TextInput
