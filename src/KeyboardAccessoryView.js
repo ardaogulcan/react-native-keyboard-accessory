@@ -154,8 +154,11 @@ class KeyboardAccessoryView extends Component {
       children,
     } = this.props;
 
-    const visibleHeight = accessoryHeight + (avoidKeyboard ? keyboardHeight : 0);
     const applySafeArea = isSafeAreaSupported && inSafeAreaView;
+    const visibleHeight =
+      accessoryHeight
+      + (avoidKeyboard ? keyboardHeight : 0)
+      - (isKeyboardVisible ? bumperHeight + (applySafeArea ? 20 : 0) : 0);
     const isChildRenderProp = typeof children === "function";
 
     return (
