@@ -52,6 +52,7 @@ class KeyboardAccessoryView extends Component {
       accessoryHeight: 50,
       visibleAccessoryHeight: 50,
       isKeyboardVisible: false,
+      animating:false,
     }
   }
 
@@ -91,9 +92,14 @@ class KeyboardAccessoryView extends Component {
       const { animationConfig, animateOn } = this.props;
 
       if (animateOn === 'all' || Platform.OS === animateOn) {
-        LayoutAnimation.configureNext(
-          accessoryAnimation(keyboardEvent.duration, keyboardEvent.easing, animationConfig)
-        );
+        if(!this.state.animating){
+          this.setState({animating: true});
+          LayoutAnimation.configureNext(
+            accessoryAnimation(keyboardEvent.duration, keyboardEvent.easing, animationConfig),
+            () => this.setState({animating: false}),
+            () => this.setState({animating: false}),
+          );
+        }
       }
 
       this.setState({
@@ -121,9 +127,14 @@ class KeyboardAccessoryView extends Component {
     const { animateOn, animationConfig } = this.props;
 
     if (animateOn === 'all' || Platform.OS === animateOn) {
-      LayoutAnimation.configureNext(
-        animationConfig || accessoryAnimation(keyboardEvent.duration, keyboardEvent.easing, animationConfig)
-      );
+      if(!this.state.animating){
+        this.setState({animating: true});
+        LayoutAnimation.configureNext(
+          animationConfig || accessoryAnimation(keyboardEvent.duration, keyboardEvent.easing, animationConfig),
+          () => this.setState({animating: false}),
+          () => this.setState({animating: false}),
+        );
+      }
     }
 
     this.setState({
