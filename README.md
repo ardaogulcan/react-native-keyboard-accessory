@@ -162,3 +162,6 @@ All the `KeyboardAccessoryView` props will be passed.
   ## Known Issues
 
   - Accessory doesn't follow keyboard when closed with drag gesture.
+
+  ## Troubleshooting
+  - Extra space when using with BottomTabs from React-Navigation. A [solution](https://github.com/ardaogulcan/react-native-keyboard-accessory/issues/47#issuecomment-820056381) found is to hide the TabBar when the keyboard is open. Check issue [#47](https://github.com/ardaogulcan/react-native-keyboard-accessory/issues/47).
